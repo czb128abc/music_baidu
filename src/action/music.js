@@ -51,12 +51,8 @@ exports.addSongsToPlayList = function (songIdSet) {
     dispatch(playListAddSongs(songs));
   }
 };
-exports.playTheSong = function (song) {
-  return function (dispatch, getState) {
-    const searchSongList = getState().music.searchSongList;
-    let songs = getSongsInSearchResult(songIdSet, searchSongList);
-    dispatch(playListAddSongs(songs));
-  }
+exports.playTheSong = function (songObj) {
+  console.log('...action playTheSong '+songObj)
 };
 /**
  * 在搜索区域中,查询song 对象集合

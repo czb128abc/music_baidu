@@ -11,7 +11,7 @@ const SearchSongList = React.createClass({
       <div>
         this is searchSongList;
         <ul>
-          {searchSongList.map(item => <SearchSongItem key={item.songid} item={item} handleAddSongToPlayList={this.handleAddSongToPlayList}></SearchSongItem>)}
+          {searchSongList.map(item => <SearchSongItem key={item.song_id} item={item} handleAddSongToPlayList={this.handleAddSongToPlayList}></SearchSongItem>)}
         </ul>
       </div>
     );

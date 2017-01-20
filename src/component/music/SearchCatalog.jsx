@@ -16,11 +16,11 @@ const SearchCatalog = React.createClass({
         <div>
           歌手:
           <ul>
-            {searchCatalog.artist.map(artist => <SearchArtistItem artist={artist} searchSongsById={searchSongsById}></SearchArtistItem>)}
+            {searchCatalog.artist.map(artist => <SearchArtistItem key={artist.artistid} artist={artist} searchSongsById={searchSongsById}></SearchArtistItem>)}
           </ul>
         </div>
         <div>
-          专辑:{JSON.stringify(searchCatalog.album)}
+          专辑:JSON.stringify(searchCatalog.album)
         </div>
       </div>
     );
