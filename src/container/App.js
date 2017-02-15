@@ -5,6 +5,8 @@ import { connect } from 'react-redux'
 
 import Header from  './../component/Header.jsx'
 import MainSection from './../component/MainSection.jsx'
+import 'todomvc-app-css/index.css'
+
 
 import TodoActions from './../action/todos.js'
 

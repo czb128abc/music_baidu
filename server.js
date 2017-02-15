@@ -38,8 +38,8 @@ app.get('/api/searchSongsById',function(req, res){
     res.json(data);
   });
 });
-app.get('/api/getSongLrc',function(req, res){
-  musicService.getSongLrc(req.query.songId,function(data){
+app.get('/api/getSongInfo',function(req, res){
+  musicService.getSongInfo(req.query.songId,function(data){
     res.json(data);
   });
 });
@@ -52,4 +52,3 @@ app.listen(port, function(error) {
     console.info("==> 🌎  Listening on port %s. Open up http://localhost:%s/ in your browser.", port, port)
   }
 })
-

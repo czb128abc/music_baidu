@@ -30,6 +30,7 @@ var music = {
   },
   //获取歌曲信息
   getSongInfo: function (songId, callback) {
+    var _this = this;
     var form = new FormData();
     form.append('method', 'baidu.ting.song.play');
     form.append('songid', songId);
@@ -38,7 +39,10 @@ var music = {
     }).then(function (json) {
       console.info('getSongInfo : ' + songId);
       console.log(json);
-      callback(json)
+      _this.getSongLrc(songId,function(data) {
+        json.songLrcObj = data;
+        callback(json);
+      });
       return json;
     });
   },

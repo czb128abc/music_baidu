@@ -4,7 +4,6 @@ let initialState = {
   searchCatalog: {},
   searchSongList: [],
   currentSong: undefined,
-  currentSonglrc: undefined,
   testList: [
     { songname: 'love you' },
     { songname: 'love you2' }
@@ -42,11 +41,10 @@ function music(state = initialState, action) {
       };
       return Object.assign({}, state, obj);
     }
-    case 'GET_SONG_LRC':
+    case 'GET_SONG_ALL_INFO':
     {
       var obj = {
-        currentSonglrc: payload.songlrc,
-        currentSong: payload.song
+        'currentSong': payload
       };
       return Object.assign({}, state, obj);
     }

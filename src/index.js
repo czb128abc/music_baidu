@@ -2,9 +2,7 @@ import React from 'react'
 import {render} from 'react-dom'
 import { Provider } from 'react-redux'
 const MusicView = require('./container/music/music-view.jsx');
-import App from './container/App'
 import configureStore from './configureStore/configureStore'
-import 'todomvc-app-css/index.css'
 import DevTools from './container/dev/devtools.jsx';
 import { createStore, applyMiddleware, compose } from 'redux'
 import reducer from './reducer/index'
@@ -15,7 +13,6 @@ var storeCreator = compose(applyMiddleware(thunkMiddleware), DevTools.instrument
 render(
   <Provider store={store}>
     <div>
-      <App />
       <MusicView />
       <DevTools/>
     </div>

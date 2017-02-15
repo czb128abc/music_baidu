@@ -4,6 +4,7 @@ const actions = require('./../../action/music.js');
 const Playlist = require('./../../component/music/PayList.jsx');
 const SearchSongList = require('./../../component/music/SearchSongList.jsx');
 const SearchCatalog = require('./../../component/music/SearchCatalog.jsx');
+const APlayer = require('./../../component/music/APlayer.jsx');
 //<!--  搜索区域 (搜索框|搜索结果列表)-->
 //<!--  歌曲区域 -->
 //<!--  播放器 -->
@@ -13,7 +14,7 @@ const MusicView = React.createClass({
   handleSearchCatalogSugByName: function () {
     const {searchCatalogSugByName} = this.props;
     var searchInputDom = this.searchInput;
-    searchCatalogSugByName(searchInputDom.value ? searchInputDom.value : '李宗盛');
+    searchCatalogSugByName(searchInputDom.value ? searchInputDom.value : 'jay');
   },
   handleSubmit(e) {
     const text = e.target.value.trim()
@@ -22,10 +23,10 @@ const MusicView = React.createClass({
     }
   },
   render: function () {
-    const {searchCatalogSugByName,playlist,searchCatalog,searchSongsById} = this.props;
+    const {searchCatalogSugByName,playlist,searchCatalog,searchSongsById,currentSong} = this.props;
     return (
       <div className="music-view">
-        this is music view
+        <APlayer currentSong={currentSong}></APlayer>
 
         <input type="text" ref={(ref)=>this.searchInput=ref}
                style={{ width: '200px', padding: '10px' }}
